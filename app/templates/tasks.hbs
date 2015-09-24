@@ -1,0 +1,12 @@
+<form {{action 'addTask' new_task on='submit'}}>
+  {{input type='text' value=new_task placeholder='Enter new task'}}
+  <input type='submit' value='Add'>
+</form>
+
+<ul>
+  {{#each model as |task|}}
+    <li>{{#link-to 'tasks.show' task}}{{task.name}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+{{outlet}}
